@@ -7,5 +7,45 @@
     tools:context=".MainActivity">
 
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Felhasználónév"
+        android:layout_marginTop = "200dp"
+        android:focusable = "true"
+        android:textColor="@color/black"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true"
+        android:id="@+id/felhszanaloNev"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Jelszó"
+        android:layout_marginTop = "10dp"
+        android:focusable = "true"
+        android:textColor="@color/black"
+        android:layout_alignParentLeft = "true"
+        android:layout_alignParentStart = "true"
+        android:layout_alignParentRight = "true"
+        android:layout_alignParentEnd = "true"
+        android:layout_below="@+id/felhszanaloNev"
+        android:id="@+id/jelszo"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/jelszo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/login"
+        android:text="Bejelentkezés"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/registration"
+        android:text="Regisztráció"/>
 
 </RelativeLayout>
