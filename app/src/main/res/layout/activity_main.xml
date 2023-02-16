@@ -4,8 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d8f9ff"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ITT LESZA A LOGÓ"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -38,6 +44,7 @@
         android:layout_below="@+id/jelszo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
+        android:background="@color/black"
         android:id="@+id/login"
         android:text="Bejelentkezés"/>
     <Button
@@ -45,6 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/login"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop = "10dp"
+        android:background="@color/black"
         android:id="@+id/registration"
         android:text="Regisztráció"/>
 
