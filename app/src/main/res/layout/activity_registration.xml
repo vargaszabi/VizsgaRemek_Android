@@ -24,6 +24,7 @@
         android:layout_alignParentStart = "true"
         android:layout_alignParentRight = "true"
         android:layout_alignParentEnd = "true"
+        android:backgroundTint="@android:color/black"
         android:id="@+id/felhszanaloNev"/>
     <EditText
         android:layout_width="wrap_content"
@@ -36,6 +37,7 @@
         android:layout_alignParentStart = "true"
         android:layout_alignParentRight = "true"
         android:layout_alignParentEnd = "true"
+        android:backgroundTint="@android:color/black"
         android:layout_below="@+id/felhszanaloNev"
         android:id="@+id/email"/>
 
@@ -51,6 +53,7 @@
         android:layout_alignParentStart = "true"
         android:layout_alignParentRight = "true"
         android:layout_alignParentEnd = "true"
+        android:backgroundTint="@android:color/black"
         android:layout_below="@+id/email"
         android:id="@+id/jelszo"/>
     <EditText
@@ -65,6 +68,7 @@
         android:layout_alignParentStart = "true"
         android:layout_alignParentRight = "true"
         android:layout_alignParentEnd = "true"
+        android:backgroundTint="@android:color/black"
         android:layout_below="@+id/jelszo"
         android:id="@+id/jelszoUjra"/>
 
@@ -74,7 +78,7 @@
         android:layout_below="@+id/jelszoUjra"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:background="@color/black"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:id="@+id/regisztralas"
         android:text="Regisztrálás"/>
 
