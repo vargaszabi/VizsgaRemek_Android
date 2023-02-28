@@ -8,16 +8,16 @@
     android:orientation="vertical"
     tools:context=".RegistrationActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ITT LESZA A LOGÓ"/>
+    <ImageView android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/sky_logo"
+        android:id="@+id/logo"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Felhasználónév"
-        android:layout_marginTop = "200dp"
+        android:layout_below="@+id/logo"
         android:focusable = "true"
         android:textColor="@color/black"
         android:layout_alignParentLeft = "true"
