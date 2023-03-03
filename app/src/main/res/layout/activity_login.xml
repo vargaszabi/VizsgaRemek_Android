@@ -1,79 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d8f9ff"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".LoginActivity">
 
 
-    <ImageView android:layout_height="300dp"
+    <ImageView android:layout_height="200dp"
         android:layout_width="match_parent"
         android:src="@drawable/sky_logo"
         android:id="@+id/logo"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Felhasználónév"
-        android:layout_below="@+id/logo"
         android:focusable = "true"
         android:textColor="@color/black"
-        android:layout_alignParentLeft = "true"
-        android:layout_alignParentStart = "true"
-        android:layout_alignParentRight = "true"
-        android:layout_alignParentEnd = "true"
         android:backgroundTint="@android:color/black"
         android:id="@+id/felhszanaloNev"/>
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Jelszó"
         android:layout_marginTop = "10dp"
         android:focusable = "true"
         android:inputType="textPassword"
         android:textColor="@color/black"
-        android:layout_alignParentLeft = "true"
-        android:layout_alignParentStart = "true"
-        android:layout_alignParentRight = "true"
-        android:layout_alignParentEnd = "true"
         android:backgroundTint="@android:color/black"
-        android:layout_below="@+id/felhszanaloNev"
         android:id="@+id/jelszo"/>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/jelszo"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:backgroundTint="@android:color/holo_blue_light"
         android:id="@+id/bejelentkezes"
         android:text="Bejelentkezés"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentLeft = "true"
-        android:layout_alignParentStart = "true"
-        android:layout_alignParentRight = "true"
-        android:layout_alignParentEnd = "true"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:layout_below="@id/bejelentkezes"
         android:id="@+id/szoveg1"
         android:text="Még nincs fiókod?"/>
 
     <Button
         android:id="@+id/regisztracio"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/szoveg1"
-        android:layout_centerHorizontal="true"
         android:backgroundTint="@android:color/holo_blue_light"
         android:text="Regisztráció" />
 
-</RelativeLayout>
+</LinearLayout>
