@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText usernameTxt, emailTxt, passwordTxt, passwordagainTxt;
-    private Button registrationButton;
+    private Button registrationButton, backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class RegistrationActivity extends AppCompatActivity {
         passwordTxt = findViewById(R.id.jelszo);
         passwordagainTxt = findViewById(R.id.jelszoUjra);
         registrationButton = findViewById(R.id.regisztralas);
+        backButton = findViewById(R.id.back);
 
         registrationButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 String email = emailTxt.getText().toString();
                 String password = passwordTxt.getText().toString();
                 String passwordAgain = passwordagainTxt.getText().toString();
+                Intent loginpage = new Intent(RegistrationActivity.this, LoginActivity.class);
+                startActivity(loginpage);
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent loginpage = new Intent(RegistrationActivity.this, LoginActivity.class);
                 startActivity(loginpage);
             }
