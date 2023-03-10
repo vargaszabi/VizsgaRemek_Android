@@ -1,7 +1,5 @@
 package com.example.vizsgaremek;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
@@ -44,33 +44,38 @@ public class RegistrationActivity extends AppCompatActivity {
                 String passwordAgain = passwordagainTxt.getText().toString().trim();
                 if (username.isEmpty()){
                     usernameTxt.setError("Nem lehet üres");
+                    return;
                 } else {
                     usernameTxt.setError(null);
                 }
                 if (email.isEmpty()){
                     emailTxt.setError("Nem lehet üres");
+                    return;
                 } else {
                     emailTxt.setError(null);
                 }
                 if (password.isEmpty()){
                     passwordTxt.setError("Nem lehet üres");
+                    return;
                 } else {
                     passwordTxt.setError(null);
                 }
                 if (passwordAgain.isEmpty()){
                     passwordagainTxt.setError("Nem lehet üres");
+                    return;
                 } else {
                     passwordagainTxt.setError(null);
                 }
-                if (password.equals(passwordAgain)){
+                if (!password.equals(passwordAgain)){
                     passwordagainTxt.setError("A jelszó nem egyezik!");
+                    return;
                 } else {
                     passwordagainTxt.setError(null);
                 }
                 Gson json = new Gson();
                 Users newUser = new Users(username, email, password, passwordAgain);
                 RequestTask task = new RequestTask(BASE_URL, "POST", json.toJson(newUser));
-                task.execute;
+                task.execute();
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +130,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            super.onPostExecute();
+            super.onPreExecute();
         }
 
         @Override
