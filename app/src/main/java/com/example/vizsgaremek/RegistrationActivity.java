@@ -108,18 +108,10 @@ public class RegistrationActivity extends AppCompatActivity {
             Response response = null;
             try {
                 switch (requestType) {
-                    case "GET":
-                        response = RequestHandler.get(requesrtUrl);
-                        break;
                     case "POST":
-                        response = RequestHandler.post(requesrtUrl, requestParams);
+                        response = RequestHandler.post(requesrtUrl, requestParams, null);
                         break;
-                    case "PUT":
-                        response = RequestHandler.put(requesrtUrl,requestParams);
-                        break;
-                    case "DELETE":
-                        response = RequestHandler.delete(requesrtUrl + "/" + requestParams);
-                        break;
+
                 }
             } catch (IOException e){
                 Toast.makeText(RegistrationActivity.this,

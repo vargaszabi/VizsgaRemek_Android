@@ -18,11 +18,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Felhasználónév"
+        android:hint="Email"
         android:focusable = "true"
         android:textColor="@color/black"
         android:backgroundTint="@android:color/black"
-        android:id="@+id/felhszanaloNev"/>
+        android:id="@+id/email"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
