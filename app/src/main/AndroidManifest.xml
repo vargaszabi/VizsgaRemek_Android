@@ -18,9 +18,6 @@
             android:name=".UserExerciseActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminActivity"
-            android:exported="false" />
-        <activity
             android:name=".UserMainActivity"
             android:exported="false" />
         <activity

@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             Gson converter = new Gson();
 
             if (response.getResponseCode() >= 400) {
-                Toast.makeText(LoginActivity.this, response.getContent(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Nem megfelelő email vagy jelszó", Toast.LENGTH_SHORT).show();
 
             } else {
                 Toast.makeText(LoginActivity.this, "Siekeres Bejelentkezés", Toast.LENGTH_SHORT).show();

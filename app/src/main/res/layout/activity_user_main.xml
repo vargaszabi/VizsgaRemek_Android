@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d8f9ff"
+    android:orientation="vertical"
+    android:padding="15dp"
     tools:context=".UserMainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/sky_logo"
+        android:id="@+id/logo"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/kezdo"
+        android:text="Kezdő"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@android:color/holo_blue_light" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:id="@+id/szoveg1"
+        android:text="Első napjaidon ajánlott hogy megismerd a gyakorlatokat."/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gyakorlott"
+        android:text="Gyakorlott"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@android:color/holo_blue_light"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:id="@+id/szoveg2"
+        android:text="Ha már ismered a gyakorlatokat és úgy érzed jobban is tudsz teljesíteni."/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rutinos"
+        android:text="Rutinos"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@android:color/holo_blue_light"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:id="@+id/szoveg3"
+        android:text="Ha már otthonosan mozogsz a a gyakorlatok között és nagyobb kihívásra vágysz."/>
+
+
+</LinearLayout>

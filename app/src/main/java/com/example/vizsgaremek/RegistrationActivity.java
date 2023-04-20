@@ -130,7 +130,7 @@ public class RegistrationActivity extends AppCompatActivity {
             super.onPostExecute(response);
             if (response.getResponseCode() >= 400) {
                 Toast.makeText(RegistrationActivity.this,
-                        response.getContent(), Toast.LENGTH_SHORT).show();
+                        "A regisztráció feltételei nem felelnek meg", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(RegistrationActivity.this,
                        "Sikeres Regisztráció", Toast.LENGTH_SHORT).show();
