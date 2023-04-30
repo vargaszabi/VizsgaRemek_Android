@@ -46,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
                 Gson json = new Gson();
 
                 LoginGetSet logindata = new LoginGetSet(email, password);
-                //Toast.makeText(LoginActivity.this, json.toJson(logindata), Toast.LENGTH_SHORT).show();
                 RequestTask task = new RequestTask(BASE_URL, "POST", json.toJson(logindata));
                 task.execute();
             }

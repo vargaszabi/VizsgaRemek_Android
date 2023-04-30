@@ -139,16 +139,12 @@ public class RegistrationActivity extends AppCompatActivity {
             }
             switch (requestType) {
                 case "GET":
-
                     break;
                 case "POST":
-
                     break;
                 case "PUT":
-
                     break;
                 case "DELETE":
-
                     break;
             }
         }
