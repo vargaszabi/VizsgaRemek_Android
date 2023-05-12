@@ -7,11 +7,36 @@
     android:padding="15dp">
 
 
-    <ListView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20sp"
-        android:divider="@color/black"
-        android:id="@+id/gyakorlatView"/>
+        android:text="Gyakorlat"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/excerciseName"
+        android:paddingTop="20dp"
+        android:textSize="40dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        android:textAlignment="center"
+        android:paddingTop="30dp"
+        android:textSize="20dp"
+        android:paddingBottom="30dp"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextButton"
+        android:text="Következő Gyakorlat"/>
 
 </LinearLayout>

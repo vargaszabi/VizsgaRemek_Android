@@ -1,57 +1,58 @@
 package com.example.vizsgaremek;
 
 
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Gyakorlat {
-    public String gyakorlat_id;
-    public String name;
-    public String media;
-    public String description;
+public class Gyakorlat implements Parcelable {
+    private int gyakorlatId;
+    private String name;
+    private String media;
+    private String description;
 
-    public String getGyakorlat_id() {
-        return gyakorlat_id;
-    }
-
-    public void setGyakorlat_id(String gyakorlat_id) {
-        this.gyakorlat_id = gyakorlat_id;
+    public int getGyakorlatId() {
+        return gyakorlatId;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getMedia() {
         return media;
-    }
-
-    public void setMedia(String media) {
-        this.media = media;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public Gyakorlat(String gyakorlat_id, String name, String media, String description) {
-        this.gyakorlat_id = gyakorlat_id;
-        this.name = name;
-        this.media = media;
-        this.description = description;
+    @Override
+    public void writeToParcel(Parcel dest, int arg1) {
+        dest.writeInt(gyakorlatId);
+        dest.writeString(name);
+        dest.writeString(media);
+        dest.writeString(description);
     }
-    class GyakorlatListHelper{
-        private List<Gyakorlat> gyakorlat;
 
-        public List<Gyakorlat> getGyakorlat() {
-            return gyakorlat;
+    public Gyakorlat(Parcel in) {
+        gyakorlatId = in.readInt();
+        name = in.readString();
+        media = in.readString();
+        description = in.readString();
+    }
+
+    public static final Parcelable.Creator<Gyakorlat> CREATOR = new Parcelable.Creator<Gyakorlat>() {
+        public Gyakorlat createFromParcel(Parcel in) {
+            return new Gyakorlat(in);
         }
-    }
+
+        public Gyakorlat[] newArray(int size) {
+            return new Gyakorlat[size];
+        }
+    };
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -12,16 +13,19 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
 public class UserMainActivity extends AppCompatActivity {
 
-    private Number nap_id = 0;
+    private int nap_id = 0;
 
-    public static List<Gyakorlat> gyakorlatList = new ArrayList<Gyakorlat>();
-    private String BASE_URL = "http://10.0.2.2:3000/gyakorlatid/bynapid/:napid";
+    public static ArrayList<Gyakorlat> gyakorlatList = new ArrayList<Gyakorlat>();
+    private String BASE_URL = "http://10.0.2.2:3000/gyakorlatok/gyakorlatid/bynapid/";
     private Button kezdoButton, gyakorlottButton, rutinosButton;
     private int day;
 
@@ -30,7 +34,8 @@ public class UserMainActivity extends AppCompatActivity {
         gyakorlottButton = findViewById(R.id.gyakorlott);
         rutinosButton = findViewById(R.id.rutinos);
         Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        day = calendar.get(Calendar.DAY_OF_WEEK);
+
     }
 
     @Override
@@ -66,10 +71,8 @@ public class UserMainActivity extends AppCompatActivity {
                         break;
                 }
                 Gson json = new Gson();
-                RequestTask task = new RequestTask(BASE_URL, "GET", json.toJson(nap_id));
+                RequestTask task = new RequestTask(BASE_URL+nap_id, "GET", json.toJson(nap_id));
                 task.execute();
-                Intent exercisepgae = new Intent(UserMainActivity.this, UserExerciseActivity.class);
-                startActivity(exercisepgae);
             }
         });
 
@@ -102,8 +105,6 @@ public class UserMainActivity extends AppCompatActivity {
                 Gson json = new Gson();
                 RequestTask task = new RequestTask(BASE_URL, "GET", json.toJson(nap_id));
                 task.execute();
-                Intent exercisepgae = new Intent(UserMainActivity.this, UserExerciseActivity.class);
-                startActivity(exercisepgae);
             }
         });
 
@@ -137,8 +138,6 @@ public class UserMainActivity extends AppCompatActivity {
                 Gson json = new Gson();
                 RequestTask task = new RequestTask(BASE_URL, "GET", json.toJson(nap_id));
                 task.execute();
-                Intent exercisepgae = new Intent(UserMainActivity.this, UserExerciseActivity.class);
-                startActivity(exercisepgae);
             }
         });
     }
@@ -184,11 +183,27 @@ public class UserMainActivity extends AppCompatActivity {
             protected void onPostExecute(Response response){
                 super.onPostExecute(response);
                 Gson converter = new Gson();
+                if (!(response.getResponseCode() == 200)){
+                    Toast.makeText(UserMainActivity.this, "Erre a napra nincs edzés", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 switch (requestType) {
                     case "GET":
-                        Gyakorlat.GyakorlatListHelper gyakorlatListHelper = converter.fromJson(response.getContent(), Gyakorlat.GyakorlatListHelper.class);
+                        Log.d("TAG", "onPostExecute: " +response.getContent());
+                        Gyakorlat[] gyakorlat = converter.fromJson(response.getContent(), Gyakorlat[].class);
                         gyakorlatList.clear();
-                        gyakorlatList.addAll(gyakorlatListHelper.getGyakorlat());
+                        gyakorlatList.addAll(Arrays.asList(gyakorlat));
+                        for (Gyakorlat gyak : gyakorlatList
+                             ) {
+                            Log.d("gyakorlat" , "onPostExecute: " +gyak.getName());
+
+                        }
+                        Intent exercisepgae = new Intent(UserMainActivity.this, UserExerciseActivity.class);
+                        Bundle bundle = new Bundle();
+                        System.out.println(gyakorlatList.size());
+                        bundle.putParcelableArrayList("gyakorlatList", gyakorlatList);
+                        exercisepgae.putExtras(bundle);
+                        startActivity(exercisepgae);
                         break;
                     case "POST":
                         break;
